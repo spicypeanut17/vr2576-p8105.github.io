@@ -1,0 +1,23 @@
+---
+title: "Vaiju's Website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    css: styles.css
+---
+
+[Home](index.html) | [About Me](about.html) | [Dashboard](dashboard.html) | [Connect with Me](#connect-with-me)
+
+## Welcome to My Website
+
+Hello! I’m Vaiju, a public health researcher with a background in Toxicology and Global Health Epidemiology and Disease Control. My background includes extensive work in public health research, particularly in HIV studies at the Whitman-Walker Institute and mental health outcomes at the Trust for Youth and Child Leadership (TYCL) International. 
+
+I am passionate about using data to drive evidence-based decision-making, improve health outcomes, and advance social justice.
+
+
+## Connect with Me
+* [<i class="fab fa-github"></i> GitHub](https://github.com/spicypeanut17)
+* [<i class="fab fa-linkedin"></i> LinkedIn](https://linkedin.com/in/vaijuraja)
+* [<i class="fas fa-envelope"></i> Email Me](mailto:vr2576@cumc.columbia.edu)
+

@@ -1,0 +1,81 @@
+---
+title: "Plot.ly and Dashboards"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+
+library(tidyverse)
+library(janitor)
+library(stringr)
+library(forcats)
+library(viridis)
+library(plotly)
+library(p8105.datasets)
+
+```
+
+```{r}
+
+data(rest_inspec)
+
+rest_inspec = 
+  rest_inspec |> 
+  janitor::clean_names() |>
+  
+  mutate(rating = review_scores_location / 2) |>
+  select(
+    neighbourhood_group, neighbourhood, rating, price, room_type, lat, long) |>
+  filter(
+    !is.na(rating), 
+    neighbourhood_group == "Manhattan",
+    room_type == "Entire home/apt",
+    price %in% 100:500)
+
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r charta}
+
+nyc_airbnb |>
+  mutate(text_label = str_c("Price: $", price, "\nRating: ", rating)) |> 
+  plot_ly(
+    x = ~lat, y = ~long, type = "scatter", mode = "markers",
+    color = ~price, text = ~text_label, alpha = 0.5)
+
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r chartb}
+
+nyc_airbnb |> 
+  mutate(neighbourhood = fct_reorder(neighbourhood, price)) |> 
+  plot_ly(y = ~price, color = ~neighbourhood, type = "box", colors = "viridis")
+
+```
+
+### Chart C
+
+```{r chartc}
+
+nyc_airbnb |> 
+  count(neighbourhood) |> 
+  mutate(neighbourhood = fct_reorder(neighbourhood, n)) |> 
+  plot_ly(x = ~neighbourhood, y = ~n, color = ~neighbourhood, type = "bar", colors = "viridis")
+
+```
+

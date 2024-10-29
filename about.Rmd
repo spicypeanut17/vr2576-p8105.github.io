@@ -1,0 +1,37 @@
+---
+title: "About Me"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+## Education
+
+* Columbia University in the City of New York
+Toxicology, M.S.
+* The George Washington University
+Global Health Epidemiology and Disease Control, M.P.H.
+* George Mason University
+Global and Community Health, B.S.
+
+## Experience
+* [GitHub](https://github.com/spicypeanut17)
+* [LinkedIn](https://linkedin.com/in/vaijuraja)
+* [Email Me](mailto:vr2576@cumc.columbia.edu)
+
+## Projects & Publications 
+Peer Reviewed Journal Articles
+Mathiyazhagan, S., Kulandai Raj, F., Fitrianingsih, K., Raja, V., & Mayom, D. (2023). Addressing Socioeconomic Determinants of Youth Suicidal Ideation: Lessons from a Youth Development Approach in India. Community Mental Health Journal. https://doi.org/10.1007/s10597-023-01177-z.
+
+M.P.H. Thesis
+Rajamarthandan, V. (2023, May 5). Non-Partner Sexual Violence Among Women and Girls in León, Nicaragua: Prevalence, Risk and Protective Factors, Types of Violence Experienced, and Consequences on Mental Health.
+
+
+## Technical Skills
+* Programming and Data Analysis: Python (pandas, NumPy, BioPython), R, SQL (MySQL, MS Access), SAS, SPSS, StatCrunch, JavaScript
+* Data Visualization: Tableau, Matplotlib, ggplot, D3.js, Plotly, ArcGIS
+* Statistical Analysis: Hypothesis Testing, Regression Analysis, Clustering, Geospatial Analysis
+* Software & Tools: Microsoft Office Suite, HTML/CSS, Qualtrics, EPIC EMR
+* Other: Risk Assessment, Ethical Data Handling, Survey Design and Implementation, Literature Reviews
+* Laboratory: Blood and DNA/RNA Sample Analysis (collection, purification, quantification), PCR/qPCR, Protein Electrophoresis, Spectrophotometric Analyses, ELISA, Epigenetics (methylation), Microbial Culture
