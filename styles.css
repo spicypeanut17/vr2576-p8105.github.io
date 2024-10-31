@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'PT Serif', serif;
     color: var(--light); /* Light color for text to contrast against dark background */
     background-color: var(--chocolate); /* Dark, moody background */
     line-height: 1.6;
@@ -49,7 +49,7 @@ footer {
 }
 
 .navbar a {
-    color: var(--light); /* Light color for nav links */
+    color: var(--hunter-green); /* Dark color for nav links */
     padding: 10px 15px; /* Add some padding for nav links */
 }
 

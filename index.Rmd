@@ -16,8 +16,10 @@ Hello! I’m Vaiju, a public health researcher with a background in Toxicology a
 I am passionate about using data to drive evidence-based decision-making, improve health outcomes, and advance social justice.
 
 
+
 ## Connect with Me
 * [<i class="fab fa-github"></i> GitHub](https://github.com/spicypeanut17)
 * [<i class="fab fa-linkedin"></i> LinkedIn](https://linkedin.com/in/vaijuraja)
 * [<i class="fas fa-envelope"></i> Email Me](mailto:vr2576@cumc.columbia.edu)
+
 
