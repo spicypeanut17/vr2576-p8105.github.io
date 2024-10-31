@@ -1,5 +1,5 @@
 ---
-title: "Plot.ly and Dashboards"
+title: "NYC Restaurant Inspections Dashboard"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -9,73 +9,122 @@ editor_options:
 ---
 
 ```{r setup, include=FALSE}
-library(flexdashboard)
 
+library(flexdashboard)
+library(crosstalk)
 library(tidyverse)
 library(janitor)
 library(stringr)
 library(forcats)
-library(viridis)
+library(RColorBrewer)
 library(plotly)
+library(sf)
+library(dplyr)
+library(tigris)
 library(p8105.datasets)
 
-```
-
-```{r}
 
 data(rest_inspec)
 
 rest_inspec = 
   rest_inspec |> 
   janitor::clean_names() |>
-  
-  mutate(rating = review_scores_location / 2) |>
-  select(
-    neighbourhood_group, neighbourhood, rating, price, room_type, lat, long) |>
-  filter(
-    !is.na(rating), 
-    neighbourhood_group == "Manhattan",
-    room_type == "Entire home/apt",
-    price %in% 100:500)
+  select(boro, zipcode, cuisine_description, score, grade, critical_flag, inspection_date) |>
+  drop_na(score, grade) |>
+  mutate(cuisine_description = recode(cuisine_description, "CafÃ©/Coffee/Tea" = "Cafe/Coffee/Tea")) |>
+  mutate(boro = recode(boro, "BRONX" = "Bronx",
+                            "BROOKLYN" = "Brooklyn",
+                            "MANHATTAN" = "Manhattan",
+                            "QUEENS" = "Queens",
+                            "STATEN ISLAND" = "Staten Island")) |>
+  sample_n(1000)
+
+
+
+# Chart A Data
+avg_scores_by_zip <- rest_inspec %>%
+  group_by(zipcode) %>%
+  summarize(avg_score = mean(score, na.rm = TRUE)) %>%
+  mutate(zipcode = as.character(zipcode))
+
+## Original Work for Map
+# Get NY ZIP code shapes for 2010 (only available year) and filter to NYC 
+nyc_zip_shapes <- zctas(year = 2010, state = "NY") %>%
+  filter(ZCTA5CE10 %in% avg_scores_by_zip$zipcode)
+
+# Transform to match map projection and calculate centroids
+nyc_zip_shapes <- st_transform(nyc_zip_shapes, crs = 4326)
+nyc_zip_centroids <- st_centroid(nyc_zip_shapes)
+
+# Extract centroid coords and merge with ZIP code data
+nyc_zip_centroids <- nyc_zip_centroids %>%
+  st_coordinates() %>%
+  as.data.frame() %>%
+  rename(long = X, lat = Y) %>%
+  bind_cols(nyc_zip_shapes %>% st_drop_geometry()) %>%
+  rename(zipcode = ZCTA5CE10) %>%
+  inner_join(avg_scores_by_zip, by = "zipcode")
 
 ```
 
 Column {data-width=650}
------------------------------------------------------------------------
+-------------------------------------
 
 ### Chart A
 
-```{r charta}
+```{r charta, warning = FALSE, echo = FALSE, message = FALSE}
 
-nyc_airbnb |>
-  mutate(text_label = str_c("Price: $", price, "\nRating: ", rating)) |> 
-  plot_ly(
-    x = ~lat, y = ~long, type = "scatter", mode = "markers",
-    color = ~price, text = ~text_label, alpha = 0.5)
+charta <- nyc_zip_centroids %>%
+  plot_ly(lat = ~lat, lon = ~long,
+        type = 'scattermapbox', mode = 'markers',
+        marker = list(
+          size = 8,
+          opacity = 0.7,
+          color = ~avg_score,
+          colorscale = 'PuRd',
+          colorbar = list(title = "Avg Score")),
+        text = ~paste("ZIP Code:", zipcode, "<br>Avg Score:", round(avg_score, 2)),
+        hoverinfo = 'text')
+charta <- charta %>%
+  layout(mapbox = list(style = 'carto-positron', zoom = 9,
+                  center = list(lat = 40.730610, lon = -73.935242)))
+charta
 
 ```
 
 Column {data-width=350}
------------------------------------------------------------------------
+-------------------------------------
 
 ### Chart B
 
-```{r chartb}
+```{r chartb, warning = FALSE, echo = FALSE, message = FALSE}
 
-nyc_airbnb |> 
-  mutate(neighbourhood = fct_reorder(neighbourhood, price)) |> 
-  plot_ly(y = ~price, color = ~neighbourhood, type = "box", colors = "viridis")
+chartb <- rest_inspec %>%
+  plot_ly(y = ~score, color = ~boro, type = 'box', colors = 'Oranges', 
+          text = ~str_c("Borough: ", boro, "\nScore: ", score),
+          hoverinfo = "text") 
+chartb <- chartb %>%
+  layout(title = "Distribution of Inspection Scores by Borough",
+         xaxis = list(title = "Borough"),
+         yaxis = list(title = "Inspection Score"))
+chartb 
 
 ```
 
 ### Chart C
 
-```{r chartc}
+```{r chartc, warning = FALSE, echo = FALSE, message = FALSE}
 
-nyc_airbnb |> 
-  count(neighbourhood) |> 
-  mutate(neighbourhood = fct_reorder(neighbourhood, n)) |> 
-  plot_ly(x = ~neighbourhood, y = ~n, color = ~neighbourhood, type = "bar", colors = "viridis")
+chartc <- rest_inspec %>%  
+  count(boro) |>
+  mutate(boro = fct_reorder(boro, n)) |>
+  plot_ly(x = ~boro, y = ~n, color = ~boro, type = "bar", colors = "Oranges", 
+          text = ~str_c("Borough: ", boro, "\nCount: ", n),
+          hoverinfo = "text") 
+chartc <- chartc %>%
+  layout(title = "Count of Violations by Borough",
+         xaxis = list(title = "Borough"),
+         yaxis = list(title = "Violation Count"))
+chartc
 
 ```
-

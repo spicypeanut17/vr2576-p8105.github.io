@@ -12,7 +12,7 @@ navbar:
     - icon: fa-linkedin fa-lg
       href: https://linkedin.com/in/vaijuraja
     - icon: fa-envelope fa-lg
-      href: mailto:<vr2576@cumc.columbia.edu>
+      href: mailto:vr2576@cumc.columbia.edu
 output:
   html_document:
-    theme: cerulean
+    theme: cosmo

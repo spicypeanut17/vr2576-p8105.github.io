@@ -4,34 +4,106 @@ output:
   html_document:
     toc: true
     toc_float: true
+    theme: cosmo
+    css: styles.css
 ---
 
 ## Education
 
-* Columbia University in the City of New York
-Toxicology, M.S.
-* The George Washington University
-Global Health Epidemiology and Disease Control, M.P.H.
-* George Mason University
-Global and Community Health, B.S.
+#### **Columbia University**
+*Toxicology, M.S.*
+
+#### **The George Washington University**
+*Global Health Epidemiology and Disease Control, M.P.H.*
+
+#### **George Mason University **
+*Global and Community Health, B.S.*
 
 ## Experience
-* [GitHub](https://github.com/spicypeanut17)
-* [LinkedIn](https://linkedin.com/in/vaijuraja)
-* [Email Me](mailto:vr2576@cumc.columbia.edu)
+#### **Research Data Specialist**, Whitman-Walker Institute
+##### Washington, D.C., November 2021 – September 2023
+- Led data management for multiple IRB-approved studies, including national cohort studies, utilizing SPSS, Python, SAS, and R for cleaning and comprehensive statistical analyses
+- Programmed and optimized surveys via Qualtrics, achieving a 95% response rate and enhancing data completeness.
+- Spearheaded data validation efforts, reconciling discrepancies and ensuring the accuracy of approximately 150 syntax files
+for ongoing and closed studies.
+- Collaborated with external stakeholders to address data requests and support research initiatives.
+
+#### **Research Fellow**, Trust for Youth and Child Leadership (TYCL) International
+##### New York, NY, January 2020 – December 2021 
+- Conducted a systematic literature review and synthesized findings to inform youth mental health programs, utilizing Microsoft Excel for visualization and analysis.
+- Contributed to manuscript preparation for publication in peer-reviewed journals.
+
+#### **Health Equity Team #1 Team Lead**, BroadStreet
+##### Milwaukee, WI, August 2020 – March 2021 
+- Conducted surveillance of COVID-19 progression across 366 US counties, analyzing case data by race and ethnicity to inform public health responses.
+- Led team communications, trained new interns, and managed project deliverables to ensure timely completion.
+
+#### **Youth Representative**, Medical Mission Sisters
+##### New York, NY, December 2019 – April 2020 
+- Advocated at the UN alongside Medical Mission Sisters NGO with special consultative status, focusing on issues such as trafficking, mental health, social development, and financing for development.
+- Drafted and communicated written and oral statements to the UN, influencing policy discussions and decisions.
+- Created and distributed newsletters to raise awareness and engage the community in NGO activities.
+- Attended UN conferences, representing the organization and networking with international stakeholders.
+- Managed and updated social media platforms, increasing online engagement and visibility.
+
+#### **Emergency Department Scribe**, ScribeAmerica
+##### Alexandria, VA, November 2017 – December 2018 
+- Documented over 200 detailed physician-patient interactions weekly to document histories of presenting illness, reviews of systems, physical examinations, medical procedures, and laboratory and radiology results into the EPIC EMR system.
+- Ensured confidentiality and compliance with HIPAA regulations, maintaining high standards for patient data security.
+
+#### **Research Assistant**, Uniformed Services University of Health Services
+##### Bethesda, MD, January 2017 – December 2018
+- Assisted in the literature review of two global health research projects with focuses on: 1) the prognostic factors of ovarian cancer and 2) age-specific incidence rates of common lung cancers revealing the relationships of histologic tumor types
 
 ## Projects & Publications 
-Peer Reviewed Journal Articles
-Mathiyazhagan, S., Kulandai Raj, F., Fitrianingsih, K., Raja, V., & Mayom, D. (2023). Addressing Socioeconomic Determinants of Youth Suicidal Ideation: Lessons from a Youth Development Approach in India. Community Mental Health Journal. https://doi.org/10.1007/s10597-023-01177-z.
+#### Peer Reviewed Journal Articles
+- Mathiyazhagan, S., Kulandai Raj, F., Fitrianingsih, K., Raja, V., & Mayom, D. (2023). Addressing Socioeconomic Determinants of Youth Suicidal Ideation: Lessons from a Youth Development Approach in India. *Community Mental Health Journal.* [https://doi.org/10.1007/s10597-023-01177-z.](https://doi.org/10.1007/s10597-023-01177-z.)
 
-M.P.H. Thesis
-Rajamarthandan, V. (2023, May 5). Non-Partner Sexual Violence Among Women and Girls in León, Nicaragua: Prevalence, Risk and Protective Factors, Types of Violence Experienced, and Consequences on Mental Health.
+#### M.P.H. Thesis
+- Rajamarthandan, V. (2023, May 5). Non-Partner Sexual Violence Among Women and Girls in León, Nicaragua: Prevalence, Risk and Protective Factors, Types of Violence Experienced, and Consequences on Mental Health.
 
 
 ## Technical Skills
-* Programming and Data Analysis: Python (pandas, NumPy, BioPython), R, SQL (MySQL, MS Access), SAS, SPSS, StatCrunch, JavaScript
-* Data Visualization: Tableau, Matplotlib, ggplot, D3.js, Plotly, ArcGIS
-* Statistical Analysis: Hypothesis Testing, Regression Analysis, Clustering, Geospatial Analysis
-* Software & Tools: Microsoft Office Suite, HTML/CSS, Qualtrics, EPIC EMR
-* Other: Risk Assessment, Ethical Data Handling, Survey Design and Implementation, Literature Reviews
-* Laboratory: Blood and DNA/RNA Sample Analysis (collection, purification, quantification), PCR/qPCR, Protein Electrophoresis, Spectrophotometric Analyses, ELISA, Epigenetics (methylation), Microbial Culture
+#### Programming and Data Analysis
+- Python (pandas, NumPy, BioPython)
+- R
+- SQL (MySQL, MS Access)
+- SAS
+- SPSS
+- StatCrunch
+- JavaScript
+
+#### Data Visualization
+- Tableau
+- Matplotlib
+- ggplot
+- D3.js
+- Plotly
+- ArcGIS
+
+#### Statistical Analysis
+- Hypothesis Testing
+- Regression Analysis
+- Clustering
+- Geospatial Analysis
+
+#### Software & Tools
+- Microsoft Office Suite
+- HTML/CSS
+- Qualtrics
+- EPIC EMR
+
+#### Other
+- Risk Assessment
+- Ethical Data Handling
+- Survey Design and Implementation
+- Literature Reviews
+
+#### Laboratory
+- Blood and DNA/RNA Sample Analysis (collection, purification, quantification)
+- PCR/qPCR
+- Protein Electrophoresis
+- Spectrophotometric Analyses
+- ELISA
+- Epigenetics (methylation)
+- Microbial Culture

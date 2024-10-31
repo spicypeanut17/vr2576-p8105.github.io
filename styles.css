@@ -1,0 +1,66 @@
+:root {
+    --chocolate: #342E2E;
+    --cal-poly-green: #264027ff;
+    --hunter-green: #3c5233ff;
+    --light: #E8E8E8;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: var(--light); /* Light color for text to contrast against dark background */
+    background-color: var(--chocolate); /* Dark, moody background */
+    line-height: 1.6;
+}
+
+h2 {
+    color: var(--light); /* Light color for headings */
+    border-bottom: 2px solid var(--light); /* Matching underline */
+    padding-bottom: 5px;
+}
+
+a {
+    color: var(--light); /* Light color for links */
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--cal-poly-green); /* Cal Poly Green for hover effect */
+    text-decoration: underline; /* Underline on hover */
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+header {
+    background-color: var(--chocolate); /* Dark background for the header */
+    padding: 10px 20px; /* Add some padding */
+}
+
+footer {
+    background-color: var(--chocolate); /* Same dark background for footer */
+    color: var(--light); /* Light color for footer text */
+    text-align: center; /* Centered footer text */
+    padding: 10px 0; /* Add some vertical padding */
+}
+
+.navbar {
+    background-color: var(--hunter-green); /* Dark background for the navigation bar */
+}
+
+.navbar a {
+    color: var(--light); /* Light color for nav links */
+    padding: 10px 15px; /* Add some padding for nav links */
+}
+
+.navbar a:hover {
+    color: var(--cal-poly-green); /* Cal Poly Green for hover effect */
+}
+
+.card {
+    background-color: var(--chocolate)); /* light card background for content sections */
+    border: 1px solid var(--light); /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px; /* Add padding inside the card */
+    margin: 15px; /* Add some margin between cards */
+}
